@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:line_icons/line_icons.dart';
+import 'package:skydev/pages/planet/planet_history_page.dart';
 import 'package:skydev/pages/planet/planet_page.dart';
 
 class OnboardingPage extends StatelessWidget {
@@ -8,6 +8,32 @@ class OnboardingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+          foregroundColor: Colors.white,
+          backgroundColor: Colors.black,
+          actions: [
+            IconButton(
+              onPressed: () {
+                Navigator.of(context).push(
+                  MaterialPageRoute(
+                    builder: (context) {
+                      return PlanetHistoryPage(
+                        title: "North America",
+                        description:
+                            "Lorem ipsum lorem ipsum lorem ipsumlorem ipsum lorem ipsum lorem ipsum ",
+                        time: "2 августа 2023 00:48",
+                      );
+                    },
+                  ),
+                );
+              },
+              icon: Icon(Icons.history),
+            ),
+            IconButton(
+              onPressed: () {},
+              icon: Icon(Icons.person),
+            ),
+          ]),
       body: Container(
         decoration: BoxDecoration(
           image: DecorationImage(

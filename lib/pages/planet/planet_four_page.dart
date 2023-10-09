@@ -1,7 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:skydev/pages/planet/planet_four_detail_page.dart';
 
 class PlanetFourPage extends StatelessWidget {
-  const PlanetFourPage({super.key});
+  final String title;
+  final String description;
+
+  const PlanetFourPage(
+      {super.key, required, required this.description, required this.title});
 
   @override
   Widget build(BuildContext context) {
@@ -18,29 +23,44 @@ class PlanetFourPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/flora.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PlanetFourDetailPage(
+                              image: "assets/flora.png",
+                              title: title,
+                              description: description,
+                            );
+                          },
                         ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Flora',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      );
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                'assets/flora.png'), // Путь к вашему изображению
+                            fit: BoxFit.fill,
                           ),
-                        ), // Текст кнопки
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: const EdgeInsets.only(top: 30),
+                            child: Text(
+                              'Flora',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ), // Текст кнопки
+                        ),
                       ),
                     ),
                   ),
@@ -49,29 +69,44 @@ class PlanetFourPage extends StatelessWidget {
                   width: 20,
                 ),
                 Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/fauna.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PlanetFourDetailPage(
+                              image: "assets/animals.png",
+                              title: title,
+                              description: description,
+                            );
+                          },
                         ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Fauna',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      );
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                'assets/animals.png'), // Путь к вашему изображению
+                            fit: BoxFit.fill,
                           ),
-                        ), // Текст кнопки
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 30),
+                            child: Text(
+                              'Fauna',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ), // Текст кнопки
+                        ),
                       ),
                     ),
                   ),
@@ -83,29 +118,44 @@ class PlanetFourPage extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/landscape.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PlanetFourDetailPage(
+                              image: "assets/landscape2.png",
+                              title: title,
+                              description: description,
+                            );
+                          },
                         ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Landscape',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      );
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                'assets/landscape2.png'), // Путь к вашему изображению
+                            fit: BoxFit.fill,
                           ),
-                        ), // Текст кнопки
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 30),
+                            child: Text(
+                              'Landscape',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ), // Текст кнопки
+                        ),
                       ),
                     ),
                   ),
@@ -114,29 +164,44 @@ class PlanetFourPage extends StatelessWidget {
                   width: 20,
                 ),
                 Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/water.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
+                  child: GestureDetector(
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) {
+                            return PlanetFourDetailPage(
+                              image: "assets/water2.png",
+                              title: title,
+                              description: description,
+                            );
+                          },
                         ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Water',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
+                      );
+                    },
+                    child: SizedBox(
+                      height: 60,
+                      child: Ink(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage(
+                                'assets/water2.png'), // Путь к вашему изображению
+                            fit: BoxFit.fill,
                           ),
-                        ), // Текст кнопки
+                        ),
+                        child: Container(
+                          alignment: Alignment.center,
+                          child: Padding(
+                            padding: EdgeInsets.only(top: 30),
+                            child: Text(
+                              'Water',
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 20,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                          ), // Текст кнопки
+                        ),
                       ),
                     ),
                   ),

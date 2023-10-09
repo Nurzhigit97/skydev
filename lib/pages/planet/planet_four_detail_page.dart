@@ -1,149 +1,54 @@
 import 'package:flutter/material.dart';
 
 class PlanetFourDetailPage extends StatelessWidget {
-  const PlanetFourDetailPage({super.key});
+  final String title;
+  final String description;
+  final String image;
+
+  const PlanetFourDetailPage(
+      {super.key,
+      required,
+      required this.description,
+      required this.title,
+      required this.image});
 
   @override
   Widget build(BuildContext context) {
-    return Center(
-      child: Padding(
-        padding: const EdgeInsets.only(
-          top: 10,
-          bottom: 10,
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/flora.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: const EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Flora',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ), // Текст кнопки
-                      ),
-                    ),
+    return Scaffold(
+      appBar: AppBar(),
+      body: SafeArea(
+        child: Center(
+          child: ListView(
+            padding: EdgeInsets.only(top: 10, bottom: 10, left: 20, right: 20),
+            children: [
+              SizedBox(
+                height: MediaQuery.of(context).size.height / 4,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(
+                      16.0), // Adjust the radius as needed
+                  child: Image(
+                    image: AssetImage(image),
+                    fit: BoxFit.cover,
                   ),
                 ),
-                SizedBox(
-                  width: 20,
+              ),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Text(
+                  title,
+                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
                 ),
-                Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/fauna.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Fauna',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ), // Текст кнопки
-                      ),
-                    ),
-                  ),
+              ),
+              SizedBox(height: 10),
+              Text(
+                description,
+                style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.black,
                 ),
-              ],
-            ),
-            SizedBox(height: 10),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/landscape.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Landscape',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ), // Текст кнопки
-                      ),
-                    ),
-                  ),
-                ),
-                SizedBox(
-                  width: 20,
-                ),
-                Expanded(
-                  child: SizedBox(
-                    height: 60,
-                    child: Ink(
-                      decoration: BoxDecoration(
-                        image: DecorationImage(
-                          image: AssetImage(
-                              'assets/water.png'), // Путь к вашему изображению
-                          fit: BoxFit.fill,
-                        ),
-                      ),
-                      child: Container(
-                        alignment: Alignment.center,
-                        child: Padding(
-                          padding: EdgeInsets.only(top: 30),
-                          child: Text(
-                            'Water',
-                            style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 20,
-                              fontWeight: FontWeight.bold,
-                            ),
-                          ),
-                        ), // Текст кнопки
-                      ),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );

@@ -4,8 +4,13 @@ import 'package:skydev/pages/planet/planet_four_page.dart';
 class PlanetDetailPage extends StatelessWidget {
   final String title;
   final String description;
-  const PlanetDetailPage(
-      {super.key, required this.title, required this.description});
+  final String? image;
+  const PlanetDetailPage({
+    super.key,
+    required this.title,
+    required this.description,
+    this.image,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,12 +30,15 @@ class PlanetDetailPage extends StatelessWidget {
                 borderRadius:
                     BorderRadius.circular(16.0), // Adjust the radius as needed
                 child: Image(
-                  image: AssetImage('assets/landscape2.png'),
+                  image: AssetImage(image!),
                   fit: BoxFit.cover,
                 ),
               ),
             ),
-            PlanetFourPage(),
+            PlanetFourPage(
+              title: title,
+              description: description,
+            ),
             Text(
               description,
               style: TextStyle(
